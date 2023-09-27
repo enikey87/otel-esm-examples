@@ -19,11 +19,11 @@
   "homepage": "https://github.com/nlindley/otel-esm-examples#readme",
   "dependencies": {
     "@opentelemetry/api": "^1.4.1",
-    "@opentelemetry/instrumentation": "^0.41.0",
-    "@opentelemetry/instrumentation-fastify": "^0.32.0",
-    "@opentelemetry/instrumentation-http": "^0.41.0",
-    "@opentelemetry/sdk-node": "^0.41.0",
-    "@opentelemetry/sdk-trace-base": "^1.15.0",
+    "@opentelemetry/instrumentation": "^0.43.0",
+    "@opentelemetry/instrumentation-fastify": "^0.32.2",
+    "@opentelemetry/instrumentation-http": "^0.43.0",
+    "@opentelemetry/sdk-node": "^0.43.0",
+    "@opentelemetry/sdk-trace-base": "^1.17.0",
     "fastify": "^4.19.2"
   }
 }

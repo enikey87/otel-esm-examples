@@ -4,7 +4,7 @@ const server = fastify();
 
 server.route({
   method: "GET",
-  url: "/",
+  url: "/:foo",
   handler: (req, res) => {
     return res.status(200).send();
   }

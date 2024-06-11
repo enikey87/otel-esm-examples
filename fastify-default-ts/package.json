@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "node --experimental-loader=@opentelemetry/instrumentation/hook.mjs build/.",
-    "start:swc": "node --import @swc-node/register/esm-register --experimental-loader=@opentelemetry/instrumentation/hook.mjs ./src/index.ts",
+    "start:swc-node": "node --import @swc-node/register/esm-register --experimental-loader=@opentelemetry/instrumentation/hook.mjs ./src/index.ts",
+    "start:swc-mine": "node --import @songsterr/swc-loader --experimental-loader=@opentelemetry/instrumentation/hook.mjs ./src/index.ts",
     "lint": "eslint src/ test/ --fix",
     "typecheck": "tsc --noEmit && tsc-strict",
     "build": "tsc"
@@ -27,6 +28,7 @@
     "@opentelemetry/instrumentation-http": "^0.43.0",
     "@opentelemetry/sdk-node": "^0.43.0",
     "@opentelemetry/sdk-trace-base": "^1.17.0",
+    "@songsterr/swc-loader": "1.2.0",
     "fastify": "^4.19.2"
   },
   "devDependencies": {

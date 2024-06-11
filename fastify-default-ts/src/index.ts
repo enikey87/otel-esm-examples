@@ -23,4 +23,4 @@ const sdk = new NodeSDK({
 
 sdk.start()
 
-await import('./app.js')
+await import('./app.ts')

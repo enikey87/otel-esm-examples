@@ -5,6 +5,7 @@
     "module": "esnext",
     "allowJs": false,
     "moduleResolution": "node",
+    "allowImportingTsExtensions": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,

@@ -1,13 +1,13 @@
-import fastify from 'fastify';
+import fastify from 'fastify'
 
-const server = fastify();
+const server = fastify()
 
 server.route({
   method: 'GET',
   url: '/:foo',
   handler: (request, reply) => {
     reply.send({ hello: 'world' })
-  }
-});
+  },
+})
 
-await server.listen({ port: 3000});
+await server.listen({ port: 3000 })

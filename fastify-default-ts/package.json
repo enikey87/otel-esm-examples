@@ -4,9 +4,11 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "start": "node --experimental-loader=@opentelemetry/instrumentation/hook.mjs build/.",
-    "start:swc-node": "node --import @swc-node/register/esm-register --experimental-loader=@opentelemetry/instrumentation/hook.mjs ./src/index.ts",
-    "start:swc-mine": "node --import @songsterr/swc-loader --experimental-loader=@opentelemetry/instrumentation/hook.mjs ./src/index.ts",
+    "start:js": "node --experimental-loader=@opentelemetry/instrumentation/hook.mjs build/.",
+    "start:swc": "node --import @swc-node/register/esm-register --experimental-loader=@opentelemetry/instrumentation/hook.mjs ./src/index.ts",
+    "start:swc:hook": "node --experimental-loader=@opentelemetry/instrumentation/hook.mjs --import @songsterr/swc-loader --import ./src/instrumentation.ts ./src/app.ts",
+    "start:swc:register": "node --import @songsterr/opentelemetry-ts-instrumentation/register --import @songsterr/swc-loader --import ./src/instrumentation.ts ./src/app.ts",
+    "start:swc:latest": "node --import @songsterr/opentelemetry-ts-instrumentation/register --import @songsterr/swc-loader ./src/bootstrap.ts",
     "lint": "eslint src/ test/ --fix",
     "typecheck": "tsc --noEmit && tsc-strict",
     "build": "tsc"
@@ -22,13 +24,14 @@
   },
   "homepage": "https://github.com/nlindley/otel-esm-examples#readme",
   "dependencies": {
-    "@opentelemetry/api": "^1.6.0",
-    "@opentelemetry/instrumentation": "^0.43.0",
-    "@opentelemetry/instrumentation-fastify": "^0.32.2",
-    "@opentelemetry/instrumentation-http": "^0.43.0",
-    "@opentelemetry/sdk-node": "^0.43.0",
-    "@opentelemetry/sdk-trace-base": "^1.17.0",
+    "@opentelemetry/api": "1.9.0",
+    "@opentelemetry/instrumentation": "^0.52.0",
+    "@opentelemetry/instrumentation-fastify": "^0.37.0",
+    "@opentelemetry/instrumentation-http": "^0.52.0",
+    "@opentelemetry/sdk-node": "^0.52.0",
+    "@opentelemetry/sdk-trace-base": "^1.25.0",
     "@songsterr/swc-loader": "1.2.0",
+    "@songsterr/opentelemetry-ts-instrumentation": "1.0.0-dev-7",
     "fastify": "^4.19.2"
   },
   "devDependencies": {

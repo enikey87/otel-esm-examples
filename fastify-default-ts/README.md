@@ -64,5 +64,5 @@ await import ('./app')
 
 ## open issues
 
-- Fastify http2 instrumentation doesn't work at all. There is no sample for this yet.
+- fastify spans created by auto instrumentation are not human readable and useless out of box.
 - ESM support is in development and not guaranteed to work at all.

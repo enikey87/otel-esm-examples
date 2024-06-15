@@ -1,3 +1,0 @@
-import './instrumentation'
-
-import './app'

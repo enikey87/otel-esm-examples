@@ -4,11 +4,11 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "start:js": "node --experimental-loader=@opentelemetry/instrumentation/hook.mjs build/.",
-    "start:swc": "node --import @swc-node/register/esm-register --experimental-loader=@opentelemetry/instrumentation/hook.mjs ./src/index.ts",
-    "start:swc:hook": "node --experimental-loader=@opentelemetry/instrumentation/hook.mjs --import @songsterr/swc-loader --import ./src/instrumentation.ts ./src/app.ts",
-    "start:swc:register": "node --import @songsterr/opentelemetry-ts-instrumentation/register --import @songsterr/swc-loader --import ./src/instrumentation.ts ./src/app.ts",
-    "start:swc:latest": "node --import @songsterr/opentelemetry-ts-instrumentation/register --import @songsterr/swc-loader ./src/bootstrap.ts",
+    "start:swc:issue": "node --import @swc-node/register/esm-register ./src/main-instrumented-by-sdk.ts",
+    "start:swc:hook": "node --import @swc-node/register/esm-register --experimental-loader=@opentelemetry/instrumentation/hook.mjs ./src/main-instrumented-by-sdk.ts",
+    "start:swc:hook:register": "node --import @songsterr/opentelemetry-ts-instrumentation/register --import @songsterr/swc-loader ./src/main-instrumented-by-sdk.ts",
+    "start:swc:hook:register:auto:issue": "node --import @songsterr/opentelemetry-ts-instrumentation/register --import @songsterr/swc-loader --import ./src/instrumentation-auto.ts ./src/app.ts",
+    "start:swc:hook:register:auto": "node --import @songsterr/opentelemetry-ts-instrumentation/register --import @songsterr/swc-loader ./src/main-instrumented-by-auto.ts",
     "lint": "eslint src/ test/ --fix",
     "typecheck": "tsc --noEmit && tsc-strict",
     "build": "tsc"

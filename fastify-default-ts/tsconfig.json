@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "outDir": "build",
+    "target": "esnext",
+    "module": "esnext",
+    "allowJs": false,
+    "moduleResolution": "node",
+    "allowImportingTsExtensions": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "plugins": [
+      {
+        "name": "typescript-strict-plugin"
+      }
+    ],
+    "resolveJsonModule": true
+  },
+  "include": [
+    "src",
+    "test"
+  ],
+  "ts-node": {
+    "swc": true
+  }
+}

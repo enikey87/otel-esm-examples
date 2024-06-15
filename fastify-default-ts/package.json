@@ -1,0 +1,50 @@
+{
+  "name": "otel-esm-examples",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "start:swc:issue": "node --import @swc-node/register/esm-register ./src/main-instrumented-by-sdk.ts",
+    "start:swc:hook": "node --import @swc-node/register/esm-register --experimental-loader=@opentelemetry/instrumentation/hook.mjs ./src/main-instrumented-by-sdk.ts",
+    "start:swc:hook:register": "node --import @songsterr/opentelemetry-ts-instrumentation/register --import @songsterr/swc-loader ./src/main-instrumented-by-sdk.ts",
+    "start:swc:hook:register:auto:issue": "node --import @songsterr/opentelemetry-ts-instrumentation/register --import @songsterr/swc-loader --import ./src/instrumentation-auto.ts ./src/app.ts",
+    "start:swc:hook:register:auto": "node --import @songsterr/opentelemetry-ts-instrumentation/register --import @songsterr/swc-loader ./src/main-instrumented-by-auto.ts",
+    "lint": "eslint src/ test/ --fix",
+    "typecheck": "tsc --noEmit && tsc-strict",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nlindley/otel-esm-examples.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/nlindley/otel-esm-examples/issues"
+  },
+  "homepage": "https://github.com/nlindley/otel-esm-examples#readme",
+  "dependencies": {
+    "@opentelemetry/api": "1.9.0",
+    "@opentelemetry/instrumentation": "^0.52.0",
+    "@opentelemetry/instrumentation-fastify": "^0.37.0",
+    "@opentelemetry/instrumentation-http": "^0.52.0",
+    "@opentelemetry/sdk-node": "^0.52.0",
+    "@opentelemetry/sdk-trace-base": "^1.25.0",
+    "@songsterr/swc-loader": "1.2.0",
+    "@songsterr/opentelemetry-ts-instrumentation": "1.0.0-dev-7",
+    "fastify": "^4.19.2"
+  },
+  "devDependencies": {
+    "@swc-node/register": "1.9.2",
+    "@types/mocha": "10.0.6",
+    "@types/node": "20.10.7",
+    "@typescript-eslint/eslint-plugin": "6.18.0",
+    "@typescript-eslint/parser": "6.18.0",
+    "c8": "9.0.0",
+    "eslint": "8.56.0",
+    "eslint-plugin-simple-import-sort": "10.0.0",
+    "mocha": "10.2.0",
+    "typescript": "5.3.3",
+    "typescript-strict-plugin": "2.2.1"
+  }
+}
